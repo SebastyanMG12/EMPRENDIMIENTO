@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>🎁🤳PEQUE-EMPRENDEDORES🎂🎉</title>
+  <link rel="stylesheet" href="style_full.css">
+</head>
+<body>
+  <header>
+    <h1>🎁🤳PEQUE-EMPRENDEDORES🎂🎉</h1>
+  </header>
+
+  <nav>
+    <a href="#" onclick="showSection('inicio')">Inicio</a>
+    <a href="#" onclick="showSection('categorias')">Categorías</a>
+    <a href="#" onclick="showSection('perfil')">Mi Perfil</a>
+    <a href="#" onclick="showSection('login')">Iniciar Sesión</a>
+    <a href="#" onclick="closeApp()">Salir</a>
+  </nav>
+
+  <div class="container">
+    <!-- SECCIÓN INICIO -->
+    <section id="inicio" class="active">
+      <div class="product-card">
+        <label for="category">Filtrar por categoría:</label>
+        <select id="category">
+          <option value="all">Todas</option>
+          <option value="comida">Comida</option>
+          <option value="ropa">Ropa</option>
+          <option value="artesanias">Artesanías</option>
+        </select>
+      </div>
+      <div id="listaProductos"></div>
+    </section>
+
+    <!-- SECCIÓN CATEGORÍAS -->
+    <section id="categorias">
+      <div class="product-card"
+           onmouseover="showCategoryItems('comida','comidaList')"
+           onmouseout="clearCategoryItems('comidaList')">
+        <h2 class="product-title">Comida</h2>
+        <div id="comidaList"></div>
+      </div>
+      <div class="product-card"
+           onmouseover="showCategoryItems('ropa','ropaList')"
+           onmouseout="clearCategoryItems('ropaList')">
+        <h2 class="product-title">Ropa</h2>
+        <div id="ropaList"></div>
+      </div>
+      <div class="product-card"
+           onmouseover="showCategoryItems('artesanias','artesaniasList')"
+           onmouseout="clearCategoryItems('artesaniasList')">
+        <h2 class="product-title">Artesanías</h2>
+        <div id="artesaniasList"></div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN PERFIL -->
+    <section id="perfil"></section>
+
+    <!-- SECCIÓN LOGIN -->
+    <section id="login">
+      <div class="product-card">
+        <h2 class="product-title">Iniciar Sesión</h2>
+        <form id="loginForm">
+          <input type="email" id="loginEmail" placeholder="Correo electrónico" required>
+          <input type="password" id="loginPassword" placeholder="Contraseña" required>
+          <button type="submit" class="order-btn">Ingresar</button>
+        </form>
+        <p id="loginError" style="color: red;"></p>
+      </div>
+    </section>
+  </div>
+
+  <script src="main_full.js"></script>
+</body>
+</html>
